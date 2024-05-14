@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Motos</title>
+</head>
+<body>
+    <h1>Listagem de Motos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados das motos serão inseridos aqui -->
+            <tr th:each="moto : ${motos}">
+                <td th:text="${moto.id}"></td>
+                <td th:text="${moto.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/motos/getMotos" method="get">
+        <button type="submit">Obter Motos</button>
+    </form>
+</body>
+</html>
